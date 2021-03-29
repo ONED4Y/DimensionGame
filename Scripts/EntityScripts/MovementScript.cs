@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MovementScript : MonoBehaviour
-{
+public class MovementScript: MonoBehaviour {
     // Start is called before the first frame update
     public int speed;
-    void Start(){
+    void Start() {
         
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update() {
         Vector3 movement = Vector3.zero;
 
         movement.x = Convert.ToInt32(Input.GetKey(KeyCode.D)) - Convert.ToInt32(Input.GetKey(KeyCode.A));
