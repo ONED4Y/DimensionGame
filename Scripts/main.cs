@@ -7,7 +7,7 @@ public class main: MonoBehaviour {
     void Start() {
 
         Debug.Log("test!!!!!!!!!Du bist ein kek!!!!!!!!");
-        Debug.Log("JasonsNam");//gekek
+        Debug.Log("JasonsNam");
     }
 
     // Update is called once per frame
