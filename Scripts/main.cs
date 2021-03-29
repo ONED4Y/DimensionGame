@@ -5,7 +5,7 @@ using UnityEngine;
 public class main: MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
-        Debug.Log("Yitian ist ein kek"); // keike
+        Debug.Log("test");
     }
 
     // Update is called once per frame
