@@ -5,8 +5,8 @@ using System;
 
 public class GridBasedMovement: MonoBehaviour {
 
-    public int Speed = 1;
-    public float GridDistance;
+    public int Speed = 3;
+    public float GridDistance = 1;
     public Transform positionPoint;
     // Start is called before the first frame update
     void Start() {
