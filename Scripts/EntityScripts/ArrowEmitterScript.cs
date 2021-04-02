@@ -21,7 +21,6 @@ public class ArrowEmitterScript: MonoBehaviour {
             GameObject Arrow = Instantiate(arrow, transform.position, Quaternion.identity);
             //Arrow.GetComponent<ArrowScript>.Move();
             //Arrow.GetComponent<ArrowScript>
-            BroadcastMessage
         }
     }
 }
