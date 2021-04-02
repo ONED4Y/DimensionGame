@@ -32,7 +32,7 @@ public class ArrowEmitterScript: MonoBehaviour {
             if(LoadedTime <= 2) {
                 speed = 0.1F;
             }
-            if(LoadedTime >2 && LoadedTime <= 3) {
+            if(LoadedTime > 2 && LoadedTime <= 3) {
                 speed = 0.5F;
             }
             if(LoadedTime > 3) {
@@ -40,7 +40,11 @@ public class ArrowEmitterScript: MonoBehaviour {
             }
             Debug.Log(speed);
             Debug.Log(LoadedTime);
-            rb.AddForce(transform.right * speed * Time.deltaTime, ForceMode2D.Impulse);
+            Debug.Log(Arrow);
+            rb.velocity = transform.right * speed * Time.deltaTime;
+
+
+            //AddForce(transform.right * speed * Time.deltaTime, ForceMode2D.Impulse);
             //Arrow.transform.Translate(new Vector3(speed, 0, 0) * Time.deltaTime);
         }
     }
