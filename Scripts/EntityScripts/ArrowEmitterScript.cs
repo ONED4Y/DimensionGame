@@ -7,7 +7,8 @@ public class ArrowEmitterScript: MonoBehaviour {
     private float CurrentTimeDown;
     private float LoadedTime;
     public GameObject arrow;
-    private
+    public float speedMultiplier;
+    private float speed;
     void Start() {
         
     }
@@ -21,6 +22,11 @@ public class ArrowEmitterScript: MonoBehaviour {
             GameObject Arrow = Instantiate(arrow, transform.position, Quaternion.identity);
             //Arrow.GetComponent<ArrowScript>.Move();
             //Arrow.GetComponent<ArrowScript>
+            speed = LoadedTime * speed;
+            if(LoadedTime > 3) {
+                speed = 3;
+            }
+            Arrow.transform.Translate(new Vector3(speed, 0, 0) * Time.deltaTime);
         }
     }
 }
