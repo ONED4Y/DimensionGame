@@ -19,14 +19,17 @@ public class ArrowEmitterScript: MonoBehaviour {
         }
         if(Input.GetKeyUp(KeyCode.I)) {
             LoadedTime = Time.time - KeyTimeDown;
-            GameObject Arrow = Instantiate(arrow, transform.position, Quaternion.identity);
+            GameObject Arrow = Instantiate(arrow, transform.position, transform.rotation);
+            Rigidbody2D rb = Arrow.GetComponent<Rigidbody2D>();
             //Arrow.GetComponent<ArrowScript>.Move();
             //Arrow.GetComponent<ArrowScript>
             speed = LoadedTime * speed;
             if(LoadedTime > 3) {
                 speed = 3;
-            }
-            Arrow.transform.Translate(new Vector3(speed, 0, 0) * Time.deltaTime);
+            }    
+            rb.AddForce(transform.right * speed, ForceMode2D.Impulse);
+            //Arrow.transform.Translate(new Vector3(speed, 0, 0) * Time.deltaTime);
+
         }
     }
 }
