@@ -7,6 +7,7 @@ public class ArrowEmitterScript: MonoBehaviour {
     private float CurrentTimeDown;
     private float LoadedTime;
     public GameObject arrow;
+    private
     void Start() {
         
     }
@@ -19,8 +20,8 @@ public class ArrowEmitterScript: MonoBehaviour {
             LoadedTime = Time.time - KeyTimeDown;
             GameObject Arrow = Instantiate(arrow, transform.position, Quaternion.identity);
             //Arrow.GetComponent<ArrowScript>.Move();
-            ArrowScript as = Arrow.GetComponent<ArrowScript>;
+            //Arrow.GetComponent<ArrowScript>
+            BroadcastMessage
         }
-        
     }
 }
