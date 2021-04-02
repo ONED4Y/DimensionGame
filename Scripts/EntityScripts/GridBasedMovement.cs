@@ -5,7 +5,7 @@ using System;
 
 public class GridBasedMovement: MonoBehaviour {
 
-    public int Speed = 3;
+    public float Speed = 3;
     public float GridDistance = 1;
     public Transform positionPoint;
     // Start is called before the first frame update
@@ -25,5 +25,13 @@ public class GridBasedMovement: MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, positionPoint.position, Speed * Time.deltaTime);
         //transform.Translate(Vector3.MoveTowards(transform.position, positionPoint.position, Speed * Time.deltaTime));
+
+        if(Input.GetKey(KeyCode.I)){
+            Speed = 0.5F;
+        }else {
+            Speed = 3;
+        }
+
+
     }
 }
