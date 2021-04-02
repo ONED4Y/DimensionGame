@@ -32,7 +32,7 @@ public class ArrowEmitterScript: MonoBehaviour {
             if(LoadedTime <= 2) {
                 speed = 0.1F;
             }
-            if(LoadedTime >2 && LoadedTime <= 3) {
+            if(LoadedTime > 2 && LoadedTime <= 3) {
                 speed = 0.5F;
             }
             if(LoadedTime > 3) {
