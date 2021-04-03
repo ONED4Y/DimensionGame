@@ -305,9 +305,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
 --- !u!1 &1503000139
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,8 +455,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9beda264d0e76a8488ae95378c08e9b9, type: 3}
->>>>>>> Stashed changes
->>>>>>> main
 --- !u!1 &1743622867
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,11 +486,6 @@ Transform:
   m_Father: {fileID: 1898827168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> main
 --- !u!114 &1743622869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,12 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 2932586475141432016, guid: 9beda264d0e76a8488ae95378c08e9b9, type: 3}
-<<<<<<< HEAD
-  speedMultiplier: 2
-=======
   speedMultiplier: 10
->>>>>>> Stashed changes
->>>>>>> main
 --- !u!1 &1898827167
 GameObject:
   m_ObjectHideFlags: 0
