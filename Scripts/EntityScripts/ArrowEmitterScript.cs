@@ -29,13 +29,13 @@ public class ArrowEmitterScript: MonoBehaviour {
             }
             Debug.Log(speed);
             */
-            if(LoadedTime <= 2) {
+            if(LoadedTime <= 1) {
                 speed = 50F;
             }
-            if(LoadedTime > 2 && LoadedTime <= 3) {
+            if(LoadedTime > 1 && LoadedTime <= 2) {
                 speed = 100F;
             }
-            if(LoadedTime > 3) {
+            if(LoadedTime > 2) {
                 speed = 500F;
             }
             Debug.Log(speed);
