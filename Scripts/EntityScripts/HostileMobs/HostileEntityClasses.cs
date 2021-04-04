@@ -8,6 +8,7 @@ public class ExampleMob {
     public float Size = 1F;
     public float Speed = 80F;
     public bool IsMelee = true;
+    public float playerIsInRange;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
         Vector3 PlayerPos = Player.transform.position;
@@ -21,8 +22,9 @@ public class ExampleMob {
         }
         */
         Vector3 Diff = TF.position - PlayerPos;
-        while(Diff != new Vector3(0, 0, 0)) {
+        while(Vector3.Distance(TF.position, PlayerPos) < playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
             TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
+            Debug.Log("Bin beim player");
             yield return null;
         }
     }
