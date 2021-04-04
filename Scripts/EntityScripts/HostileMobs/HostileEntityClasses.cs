@@ -6,7 +6,7 @@ public class ExampleMob {
     public int Damage = 10;
     public int HP = 50;
     public float Size = 1F;
-    public float Speed = 1F;
+    public float Speed = 80F;
     public bool IsMelee = true;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
