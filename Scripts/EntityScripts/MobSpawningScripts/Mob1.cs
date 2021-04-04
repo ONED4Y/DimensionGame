@@ -17,6 +17,6 @@ public class Mob1: MonoBehaviour {
         } else {
             Debug.Log($"Random number was: {Spawn}");
         }
-        yield return new WaitForSecondsRealtime(1F);
+        yield return new WaitForSecondsRealtime(1F);//does not work currently
     } // create an own script for each mob so that the coroutine will work
 }
