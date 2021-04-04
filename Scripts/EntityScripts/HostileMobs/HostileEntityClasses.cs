@@ -28,7 +28,7 @@ public class Mob1: MobFeatures {
         */
         // Vector3 Diff = TF.position - PlayerPos;
         while(Vector3.Distance(TF.position, PlayerPos) > playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
-            TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
+            //TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
             /*
             int MoveDirX = MoveDir(xDiff, TF.position.x);
             int MoveDirY = MoveDir(yDiff, TF.position.y);#

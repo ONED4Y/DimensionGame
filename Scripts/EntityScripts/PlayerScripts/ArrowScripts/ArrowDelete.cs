@@ -9,7 +9,7 @@ public class ArrowDelete: MonoBehaviour {
     public Animator anim;
     void Start()
     {
-        StartCoroutine(Destuction());
+        StartCoroutine("Destuction");
     }
     /*
     public void Shoot(float speed) {
