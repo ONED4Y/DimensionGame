@@ -11,9 +11,16 @@ public class ExampleMob {
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
         Vector3 PlayerPos = Player.transform.position;
+        /*
         float xDiff = TF.position.x - PlayerPos.x;
         float yDiff = TF.position.y - PlayerPos.y;
         while(xDiff != 0 && yDiff != 0) {
+            TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed);
+            yield return null;
+        }
+        */
+        Vector3 Diff = TF.position - PlayerPos;
+        while(Diff != new Vector3(0, 0, 0)) {
             TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed);
             yield return null;
         }
