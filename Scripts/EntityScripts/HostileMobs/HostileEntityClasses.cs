@@ -15,7 +15,7 @@ public class Mob1: MobFeatures {
     public int Damage = 10;
     public int HP = 50;
     public float Size = 1F;
-    public float Speed = 20F;
+    public float Speed = 2F;
     public bool IsMelee = true;
     public float playerIsInRange = 1.5F;
     public void GoToPlayer(GameObject GO, Transform TF) {
