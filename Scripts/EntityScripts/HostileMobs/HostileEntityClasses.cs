@@ -17,6 +17,7 @@ public class ExampleMob {
         while(xDiff != 0 && yDiff != 0) {
             TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed);
             yield return null;
+            Schande über dich dukek!
         }
         */
         Vector3 Diff = TF.position - PlayerPos;
