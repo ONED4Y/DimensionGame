@@ -10,7 +10,7 @@ public class ExampleMob {
     public bool IsMelee = true;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
-        Vector3 PlayerPos = Plaryer.transform.position;
+        Vector3 PlayerPos = Player.transform.position;
         float xDiff = TF.position.x - PlayerPos.x;
         float yDiff = TF.position.y - PlayerPos.y;
         while(xDiff != 0 && yDiff != 0) {
