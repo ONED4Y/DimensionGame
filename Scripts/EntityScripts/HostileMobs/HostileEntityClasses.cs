@@ -25,7 +25,7 @@ public class ExampleMob {
         Vector3 Diff = TF.position - PlayerPos;
         float distan = Vector3.Distance(TF.position, PlayerPos);
         Debug.Log(distan);
-        while(Vector3.Distance(TF.position, PlayerPos) < playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
+        while(Vector3.Distance(TF.position, PlayerPos) > playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
             TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
             Debug.Log("Bin beim player");
             yield return null;
