@@ -11,7 +11,7 @@ public class ExampleMob {
     public float playerIsInRange = 0;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
-        Debug.Log(Player);
+        Debug.Log(Player + "kek");
         Vector3 PlayerPos = Player.transform.position;
         /*
         float xDiff = TF.position.x - PlayerPos.x;
@@ -23,6 +23,8 @@ public class ExampleMob {
         }
         */
         Vector3 Diff = TF.position - PlayerPos;
+        float distan = Vector3.Distance(TF.position, PlayerPos);
+        Debug.Log(distan);
         while(Vector3.Distance(TF.position, PlayerPos) < playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
             TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
             Debug.Log("Bin beim player");
