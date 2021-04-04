@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainPlayerCombatScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string SelectedTool = "Sword"; //"Sword" "Bow" "Lance" ... 
     void Start()
     {
         
