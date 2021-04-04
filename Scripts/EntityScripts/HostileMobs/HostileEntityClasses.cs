@@ -8,7 +8,7 @@ public class ExampleMob {
     public float Size = 1F;
     public float Speed = 80F;
     public bool IsMelee = true;
-    public float playerIsInRange = 0;
+    public float playerIsInRange = 1.5F;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
         Debug.Log(Player + "kek");
