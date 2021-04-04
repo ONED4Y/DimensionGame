@@ -8,9 +8,10 @@ public class ExampleMob {
     public float Size = 1F;
     public float Speed = 80F;
     public bool IsMelee = true;
-    public float playerIsInRange;
+    public float playerIsInRange = 0;
     public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
         GameObject Player = GameObject.Find("Player");
+        Debug.Log(Player);
         Vector3 PlayerPos = Player.transform.position;
         /*
         float xDiff = TF.position.x - PlayerPos.x;

@@ -12,13 +12,10 @@ public class Mob1: MonoBehaviour {
         if(Spawn == 1) {
             ExampleMob Mob = new ExampleMob();
             GameObject MobGO = Instantiate(ExampleMobPrefab, Vector3.zero, transform.rotation);
-            
-            //StartCoroutine(Mob.GoToPlayer(MobGO, MobGO.transform));
-            
-            
+            StartCoroutine(Mob.GoToPlayer(MobGO, MobGO.transform));
             Debug.Log("Mob spawned");
         } else {
-            Debug.Log($"Random number was: {Spawn}");
+            //Debug.Log($"Random number was: {Spawn}");
         }
         yield return new WaitForSecondsRealtime(1F);//does not work currently
     } // create an own script for each mob so that the coroutine will work
