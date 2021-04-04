@@ -23,7 +23,7 @@ public class SwordScript : MonoBehaviour
                 case "Sword":
                     Collider2D[] allHitEnemies = Physics2D.OverlapCircleAll(transform.position, Attackrange, enemyLayers);
                     foreach(Collider2D enemy in allHitEnemies) {
-                        Debug.Log("Ich hab " + enemy.name + " getroffen. Nimm ihm Hp ab 1Tag dukek!");
+                        Debug.Log("Ich hab " + enemy.name + " getroffen. Nimm ihm Hp ab 1Tag dukek!你是一个窼克 ！");
                         //enemy.GetDamage(5);
                     }
                     return;
