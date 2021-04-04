@@ -8,7 +8,7 @@ public class Mob1: MonoBehaviour {
         StartCoroutine(RandomMobSpawn());
     }
     IEnumerator RandomMobSpawn() {
-        float Spawn = Random.Range(1, 10);
+        float Spawn = Random.Range(1, 100);
         if(Spawn == 1) {
             ExampleMob Mob = new ExampleMob();
             GameObject MobGO = Instantiate(ExampleMobPrefab, Vector3.zero, transform.rotation);
