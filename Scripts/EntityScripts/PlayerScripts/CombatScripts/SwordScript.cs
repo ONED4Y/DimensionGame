@@ -18,7 +18,7 @@ public class SwordScript : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.I)) {
+        if(Input.GetKeyDown(KeyCode.I)) {
             switch(MPCS.SelectedTool) {
                 case "Sword":
                     Collider2D[] allHitEnemies = Physics2D.OverlapCircleAll(transform.position, Attackrange, enemyLayers);
