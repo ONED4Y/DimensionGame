@@ -24,6 +24,7 @@ public class SwordScript : MonoBehaviour
                     Collider2D[] allHitEnemies = Physics2D.OverlapCircleAll(transform.position, Attackrange, enemyLayers);
                     foreach(Collider2D enemy in allHitEnemies) {
                         Debug.Log("Ich hab " + enemy.name + " getroffen. Nimm ihm Hp ab 1Tag dukek!");
+                        //enemy.GetDamage(5);
                     }
                     return;
                 default:

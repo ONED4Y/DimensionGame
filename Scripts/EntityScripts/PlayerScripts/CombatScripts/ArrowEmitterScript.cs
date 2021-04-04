@@ -16,9 +16,9 @@ public class ArrowEmitterScript: MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.I)) {
             KeyTimeDown = Time.time;
         }
-        if(Input.GetKeyUp(KeyCode.I)) {
+        if(Input.GetKeyUp(KeyCode.I) && MPCS.SelectedTool == "Bow") {
             LoadedTime = Time.time - KeyTimeDown;
-            if(LoadedTime > 0.2F && ) {
+            if(LoadedTime > 0.2F) {
                 GameObject Arrow = Instantiate(arrow, transform.position, transform.rotation);
                 Rigidbody2D rb = Arrow.GetComponent<Rigidbody2D>();
                 //Arrow.GetComponent<ArrowScript>.Move();
