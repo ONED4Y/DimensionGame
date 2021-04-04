@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobOne: MonoBehaviour {
+public class Mob1: MonoBehaviour {
     public GameObject ExampleMobPrefab;
-    void Start() {
+    void Update() {
         StartCoroutine(RandomMobSpawn());
     }
     IEnumerator RandomMobSpawn() {
@@ -13,7 +13,10 @@ public class MobOne: MonoBehaviour {
             ExampleMob Mob = new ExampleMob();
             GameObject MobGO = Instantiate(ExampleMobPrefab, Vector3.zero, transform.rotation);
             StartCoroutine(Mob.GoToPlayer(MobGO, MobGO.transform));
+            Debug.Log("Mob spawned");
+        } else {
+            Debug.Log($"Random number was: {Spawn}");
         }
-        yield return new WaitForSeconds(.5F);
-    }
+        yield return new WaitForSecondsRealtime(1F);
+    } // create an own script for each mob so that the coroutine will work
 }

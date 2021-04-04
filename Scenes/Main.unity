@@ -494,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 2932586475141432016, guid: 9beda264d0e76a8488ae95378c08e9b9, type: 3}
   speedMultiplier: 10
+  MPCS: {fileID: 0}
 --- !u!114 &1743622870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b2fa1029edd814dac859c00e25e631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MPCS: {fileID: 0}
+  Attackrange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1898827167
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119829250}
+  - component: {fileID: 2119829251}
   m_Layer: 0
   m_Name: MobSpawner
   m_TagString: Untagged
@@ -724,6 +731,19 @@ Transform:
   m_Father: {fileID: 681946248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2119829251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119829249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c1ea0b877cfb14699895e54c5dfd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExampleMobPrefab: {fileID: 5768869703452526961, guid: 31f517be0e3d9664986cdf85d2648de4, type: 3}
 --- !u!1001 &5656718063803115700
 PrefabInstance:
   m_ObjectHideFlags: 0
