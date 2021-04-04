@@ -21,7 +21,7 @@ public class ExampleMob {
         */
         Vector3 Diff = TF.position - PlayerPos;
         while(Diff != new Vector3(0, 0, 0)) {
-            TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed);
+            TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
             yield return null;
         }
     }
