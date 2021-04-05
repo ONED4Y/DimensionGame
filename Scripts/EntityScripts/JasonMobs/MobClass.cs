@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobClass : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void
+public class Mob {
+    public int JDamage;
+    public int JHp;
+    public int JSpeed;
 }
