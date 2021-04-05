@@ -17,9 +17,11 @@ public class SnoggerScript : MonoBehaviour
     void Update()
     {
         Transform JplayerTransf = GameObject.Find("Player").transform;
+        //Debug.Log(Vector3.Distance(transform.position, JplayerTransf.position));
         if(Vector3.Distance(transform.position, JplayerTransf.position) < JDetectPlayerRange && Vector3.Distance(transform.position, JplayerTransf.position) > JAtPlayerRange) {
             Vector3 RoadToPlayer = JplayerTransf.position - transform.position;
             Debug.Log("Ich bin du und du bist ein kek!");
+            
         }
     }
 }
