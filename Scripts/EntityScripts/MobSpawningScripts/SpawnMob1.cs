@@ -16,8 +16,7 @@ public class SpawnMob1: MonoBehaviour {
                 Instantiate(ExampleMobPrefab, Vector3.zero, transform.rotation);
                 //StartCoroutine(Mob.GoToPlayer(MobGO, MobGO.transform));
             }
-            yield return new WaitForSeconds(15F);
+            yield return new WaitForSeconds(10F);
         }
-        //does not work currently
     } // create an own script for each mob so that the coroutine will work
 }

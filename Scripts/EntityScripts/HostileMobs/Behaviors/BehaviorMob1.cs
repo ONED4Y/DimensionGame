@@ -5,8 +5,9 @@ using UnityEngine;
 public class BehaviorMob1: MonoBehaviour {
     private Mob1 Mob = new Mob1();
 
-    void Update() {
-        StartCoroutine(Mob.GoToPlayer(gameObject, transform));
+    void Start() {
+        StartCoroutine(Mob.GoToPlayer(transform));
+        Debug.Log("Spawned new mob");
         //Mob.GoToPlayer(gameObject, transform);
     }
 }

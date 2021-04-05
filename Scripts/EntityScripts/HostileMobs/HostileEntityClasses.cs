@@ -16,21 +16,22 @@ public class Mob1: MobFeatures {
     public int Damage = 10;
     public int HP = 50;
     public float Size = 1F;
-    public float Speed = 2F;
+    public float Speed = 20F;
     public bool IsMelee = true;
     public float playerIsInRange = 1.5F;
-    public IEnumerator GoToPlayer(GameObject GO, Transform TF) {
+    public IEnumerator GoToPlayer(Transform TF) {
         while(true) {
             GameObject Player = GameObject.Find("Player");
             Vector3 PlayerPos = Player.transform.position;
-            while(Vector3.Distance(TF.position, PlayerPos) > playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
+            if(Vector3.Distance(TF.position, PlayerPos) > playerIsInRange/*Diff != new Vector3(0, 0, 0)*/) {
                 //Vector3 MoveTo = new Vector3(Mathf.Round(PlayerPos.x), Mathf.Round(PlayerPos.y), 0);
                 //MoveTo.x = MoveDir(TF.position.x, PlayerPos.x);
                 //MoveTo.y = MoveDir(TF.position.y, PlayerPos.y);
                 TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
-                break;
+                Debug.Log(Speed * Time.deltaTime);
             }
-            yield return new WaitForSeconds(.5F);
+            Debug.Log("B");
+            yield return new WaitForSecondsRealtime(.1F);
         }
     }
 }
