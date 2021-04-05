@@ -6,4 +6,8 @@ public class Mob: MonoBehaviour {
     public int JDamage;
     public int JHp;
     public int JSpeed;
+
+    public void JDoRandomMovement() {
+        
+    }
 }
