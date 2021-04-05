@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452199731445844807, guid: 0b348e447424e8b478fd384eaaafd954, type: 3}
       propertyPath: JSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b348e447424e8b478fd384eaaafd954, type: 3}
@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741517038738947599, guid: d66b34b2d1313d84aaf2be671116c864, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.07
+      value: -30.12
       objectReference: {fileID: 0}
     - target: {fileID: 8741517038738947599, guid: d66b34b2d1313d84aaf2be671116c864, type: 3}
       propertyPath: m_LocalPosition.y
