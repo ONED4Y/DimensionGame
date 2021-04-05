@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BehaviorMob1: MonoBehaviour {
-    private readonly Mob1 Mob = new Mob1();
+    private Mob1 Mob = new Mob1();
 
     void Update() {
         Mob.GoToPlayer(gameObject, transform);
