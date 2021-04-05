@@ -13,6 +13,8 @@ public class MobFeatures {
                 return new Vector3(CurrentPos.x, CurrentPos.y + 1, 0);
             case 4:
                 return new Vector3(CurrentPos.x, CurrentPos.y - 1, 0);
+            default:
+                return CurrentPos;
         }
     }
 }
