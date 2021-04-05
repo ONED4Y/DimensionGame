@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MobFeatures {
-    /*public static float MoveDir(float MobCoord, float PlayerCoord) {
-        if(Mathf.Abs(PlayerCoord - MobCoord) < 1) { return PlayerCoord; }
-        MobCoord = Mathf.Round(MobCoord); PlayerCoord = Mathf.Round(PlayerCoord);
-        if(MobCoord < PlayerCoord) { return MobCoord + 1F; }
-        else if(MobCoord > PlayerCoord) { return MobCoord - 1F; }
-        else { return PlayerCoord; }
-    }*/
     public static Vector3 WalkDir(Vector3 CurrentPos, int R) {
         switch(R) {
             case 1:
@@ -20,8 +13,6 @@ public class MobFeatures {
                 return new Vector3(CurrentPos.x, CurrentPos.y + 1, 0);
             case 4:
                 return new Vector3(CurrentPos.x, CurrentPos.y - 1, 0);
-            default:
-                return CurrentPos;
         }
     }
 }
@@ -42,7 +33,7 @@ public class Mob1: MobFeatures {
             Vector3 PlayerPos = Player.transform.position;
             float Dist = Vector3.Distance(TF.position, PlayerPos);
 
-            if(Dist > PlayerIsInRange && Dist < 15 && LifeTime > 1.5/*Diff != new Vector3(0, 0, 0)*/) {
+            if(Dist > PlayerIsInRange && Dist < 15 && LifeTime > 1.5) {
                 TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
             } else if(Dist >= 15 && LifeTime > 1.5) {
                 TF.position = Vector3.MoveTowards(TF.position, WalkDir(TF.position, RandomWalkDir), Speed * Time.deltaTime);
