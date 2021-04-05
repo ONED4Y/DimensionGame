@@ -6,16 +6,15 @@ public class SnoggerScript: Mob {
     public float JDetectPlayerRange;
     public float JAtPlayerRange;
     public LayerMask enemyLayers;
+    private bool IsMoving;
     // Start is called before the first frame update
     void Start() {
         Debug.Log("Wuuuaaaah!! Ich LEBE!!");
-        while(true) {
-            JDoStuff();
-        }
     }
     IEnumerator RandomMovement() {
-        JDoRandomMovement(2, 1);
+        JDoRandomMovement(JSpeed, 1);
         yield return new WaitForSeconds(3);
+        IsMoving = false;
     }
     void JDoStuff() {
         Transform JplayerTransf = GameObject.Find("Player").transform;
@@ -27,9 +26,15 @@ public class SnoggerScript: Mob {
             //transform.Translate((JplayerTransf.position - transform.position) * Time.deltaTime * JSpeed);
         }
         else {
-            Mathf.RoundToInt(transform.position.x);
-            Mathf.RoundToInt(transform.position.y);
-            StartCoroutine("RandomMovement");
+            if(!IsMoving){
+                Mathf.RoundToInt(transform.position.x);
+                Mathf.RoundToInt(transform.position.y);
+                IsMoving = true;
+                StartCoroutine("RandomMovement");
+            }
         }
+    }
+    void Update() {
+        JDoStuff();
     }
 }
