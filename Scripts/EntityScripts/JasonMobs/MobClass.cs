@@ -7,21 +7,22 @@ public class Mob: MonoBehaviour {
     public int JHp;
     public int JSpeed;
 
-    public Vector3 JDoRandomMovement(int _Speed, int _Length) {
+    public Vector3 JDoRandomMovement(int _Length) {
         int RandDir = Mathf.RoundToInt(Random.Range(0, 3));
+        Debug.Log(RandDir);
         switch(RandDir) {
             case 0: 
                 //Debug.Log("keek1");
-                return Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + _Length, 0, 0), _Speed * Time.deltaTime);
+                return new Vector3(transform.position.x - _Length, transform.position.y, 0);//Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + _Length, transform.position.y, transform.position.z), _Speed);
             case 1: 
                 //Debug.Log("keek2");
-                return Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - _Length, 0, 0), _Speed * Time.deltaTime);
+                return new Vector3(transform.position.x + _Length, transform.position.y, 0);
             case 2: 
                 //Debug.Log("keek3");
-                return Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y + _Length, 0), _Speed * Time.deltaTime);
+                return new Vector3(transform.position.x, transform.position.y - _Length, 0);
             case 3: 
                 //Debug.Log("keek4");
-                return Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y - _Length, 0), _Speed * Time.deltaTime);
+                return new Vector3(transform.position.x, transform.position.y + _Length, 0);
             default: return new Vector3(0, 0, 0);
         }
     }
