@@ -8,26 +8,41 @@ public class SnoggerScript: Mob {
     public LayerMask enemyLayers;
     private Vector3 JdirSave;
     public float JGridDistance;
+
     private bool JIsMoving;
+    private bool JIsAttacking;
+
     public Transform JpositionPoint;
+
+
     void Start() {
-        Debug.Log("Wuuuaaaah!! Ich LEBE!!");
+        //Debug.Log("Wuuuaaaah!! Ich LEBE!!");
         JpositionPoint.parent = null;
     }
-    IEnumerator Wait(float Jsec) {
-        yield return new WaitForSeconds(3);
+    IEnumerator WaitForMovement(float Jsec) {
+        yield return new WaitForSeconds(Jsec);
         JIsMoving = false;
+    }
+    IEnumerator WaitForAttack(float Jsec) {
+        yield return new WaitForSeconds(Jsec);
+        JIsAttacking = false;
     }
     void Update() {
         Transform JplayerTransf = GameObject.Find("Player").transform;
         if(Vector3.Distance(transform.position, JplayerTransf.position) < JDetectPlayerRange && Vector3.Distance(transform.position, JplayerTransf.position) > JAtPlayerRange) {
+            JpositionPoint.position = gameObject.transform.position;
             JpositionPoint.parent = gameObject.transform;
             transform.position = Vector3.MoveTowards(transform.position, JplayerTransf.position, JSpeed * Time.deltaTime);
-        }else {
+        }else if (Vector3.Distance(transform.position, JplayerTransf.position) < JAtPlayerRange && !JIsAttacking) {
+            JIsAttacking = true;
+            StartCoroutine("WaitForAttack", 3);
+            JAttackPlayer("A_Melee", JAtPlayerRange, JDamage);
+            Debug.Log("Wahhrio");
+        } else {
             JpositionPoint.parent = null;
             if(Vector3.Distance(transform.position, JpositionPoint.position) <= JGridDistance * 0.05F && !JIsMoving) {
                 JIsMoving = true;
-                StartCoroutine("Wait", 3);
+                StartCoroutine("WaitForMovement", 3);
                 JpositionPoint.position = JDoRandomMovement(1);
             }
             transform.position = Vector3.MoveTowards(transform.position, JpositionPoint.position, JSpeed * Time.deltaTime);
