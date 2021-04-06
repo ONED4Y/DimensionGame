@@ -7,6 +7,7 @@ public class SpawnMob1: MonoBehaviour {
     public GameObject Snogger;
     void Start() {
         StartCoroutine("RandomMobSpawn");
+        StartCoroutine("RandomSnoggerSpawn");
     }
     IEnumerator RandomMobSpawn() {
         while(true) {
