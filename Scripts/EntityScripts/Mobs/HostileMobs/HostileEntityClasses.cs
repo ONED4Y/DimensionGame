@@ -37,15 +37,19 @@ public class Mob1: MobFeatures {
 
             if(Dist > PlayerIsInRange && Dist < 15 && LifeTime > 1.5) {
                 TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
-            } else if(Dist >= 15 && LifeTime > 1.5) {
+                LifeTime = Time.time;
+                yield return new WaitForSecondsRealtime(.1F);
+            } else if(Dist >= 15) {
                 TF.position = Vector3.MoveTowards(TF.position, WalkDir(TF.position, RandomWalkDir), Speed * Time.deltaTime);
+                if(RandomWalkDir == 5) {
+                    yield return new WaitForSecondsRealtime(3F);
+                } else {
+                    yield return new WaitForSecondsRealtime(1F);
+                }
+                if(Mathf.Round(Random.Range(1, 6)) == 1) {
+                    RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
+                }
             }
-
-            if(Mathf.Round(Random.Range(1, 6)) == 1) {
-                RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
-            }
-            LifeTime = Time.time;
-            yield return new WaitForSecondsRealtime(.1F);
         }
     }
 }
