@@ -34,13 +34,15 @@ public class SnoggerScript: Mob {
             JpositionPoint.parent = gameObject.transform;
             transform.position = Vector3.MoveTowards(transform.position, JplayerTransf.position, JSpeed * Time.deltaTime);
         }else if (Vector3.Distance(transform.position, JplayerTransf.position) < JAtPlayerRange && !JIsAttacking) {
+            JpositionPoint.position = gameObject.transform.position;
+            JpositionPoint.parent = gameObject.transform;
             JIsAttacking = true;
             StartCoroutine("WaitForAttack", 3);
             JAttackPlayer("A_Melee", JAtPlayerRange, JDamage);
             Debug.Log("Wahhrio");
         } else {
             JpositionPoint.parent = null;
-            if(Vector3.Distance(transform.position, JpositionPoint.position) <= JGridDistance * 0.05F && !JIsMoving) {
+            if(Vector3.Distance(transform.position, JpositionPoint.position) <= JGridDistance * 0.05F && !JIsMoving && Vector3.Distance(transform.position, JplayerTransf.position) > JDetectPlayerRange) {
                 JIsMoving = true;
                 StartCoroutine("WaitForMovement", 3);
                 JpositionPoint.position = JDoRandomMovement(1);
