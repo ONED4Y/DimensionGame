@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class MobFeatures {
     public static Vector3 WalkDir(Vector3 CurrentPos, int R) {
-        switch(R) {
-            case 1:
-                return new Vector3(CurrentPos.x + 1, CurrentPos.y, 0);
-            case 2:
-                return new Vector3(CurrentPos.x - 1, CurrentPos.y, 0);
-            case 3:
-                return new Vector3(CurrentPos.x, CurrentPos.y + 1, 0);
-            case 4:
-                return new Vector3(CurrentPos.x, CurrentPos.y - 1, 0);
-            default:
-                return CurrentPos;
-        }
+        int MoveDistance = Mathf.RoundToInt(Random.Range(1, 3));
+        return R switch {
+            1 => new Vector3(CurrentPos.x + MoveDistance, CurrentPos.y, 0),
+            2 => new Vector3(CurrentPos.x - MoveDistance, CurrentPos.y, 0),
+            3 => new Vector3(CurrentPos.x, CurrentPos.y + MoveDistance, 0),
+            4 => new Vector3(CurrentPos.x, CurrentPos.y - MoveDistance, 0),
+            _ => CurrentPos
+        };
     }
 }
 
@@ -23,12 +19,15 @@ public class Mob1: MobFeatures {
     public int Damage = 10;
     public int HP = 50;
     public float Size = 1F;
-    public float Speed = 20F;
+    public float FastSpeed = 5F;
+    public float SlowSpeed = 2F;
     public bool IsMelee = true;
     public float PlayerIsInRange = 1.5F;
     public IEnumerator GoToPlayer(Transform TF) {
         int RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
         float LifeTime = Time.time;
+        Vector3 Destination = WalkDir(TF.position, Mathf.RoundToInt(Random.Range(1, 5)));
+        WaitForSecondsRealtime ShouldWalk = new WaitForSecondsRealtime(0);
 
         while(true) {
             GameObject Player = GameObject.Find("Player");
@@ -36,16 +35,21 @@ public class Mob1: MobFeatures {
             float Dist = Vector3.Distance(TF.position, PlayerPos);
 
             if(Dist > PlayerIsInRange && Dist < 15 && LifeTime > 1.5) {
-                TF.position = Vector3.MoveTowards(TF.position, PlayerPos, Speed * Time.deltaTime);
+                TF.position = Vector3.MoveTowards(TF.position, PlayerPos, FastSpeed * Time.deltaTime);
+                ShouldWalk = new WaitForSecondsRealtime(0);
             } else if(Dist >= 15 && LifeTime > 1.5) {
-                TF.position = Vector3.MoveTowards(TF.position, WalkDir(TF.position, RandomWalkDir), Speed * Time.deltaTime);
+                TF.position = Vector3.MoveTowards(TF.position, Destination, SlowSpeed * Time.deltaTime);
+                if(TF.position == Destination) {
+                    ShouldWalk = new WaitForSecondsRealtime(3F);
+                    //RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
+                    Destination = WalkDir(TF.position, Mathf.RoundToInt(Random.Range(1, 5)));
+                } else {
+                    ShouldWalk = new WaitForSecondsRealtime(0);
+                }
             }
 
-            if(Mathf.Round(Random.Range(1, 6)) == 1) {
-                RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
-            }
             LifeTime = Time.time;
-            yield return new WaitForSecondsRealtime(.1F);
+            yield return ShouldWalk;
         }
     }
 }
