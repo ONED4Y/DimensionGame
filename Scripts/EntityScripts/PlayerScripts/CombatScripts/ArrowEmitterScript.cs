@@ -21,6 +21,7 @@ public class ArrowEmitterScript: MonoBehaviour {
             if(LoadedTime > 0.2F) {
                 GameObject Arrow = Instantiate(arrow, transform.position, transform.rotation);
                 Rigidbody2D rb = Arrow.GetComponent<Rigidbody2D>();
+                Debug.Log("Arrow fly");
                 //Arrow.GetComponent<ArrowScript>.Move();
                 //Arrow.GetComponent<ArrowScript>
                 /*
