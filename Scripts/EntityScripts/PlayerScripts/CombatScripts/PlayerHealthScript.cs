@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealthScript: MonoBehaviour {
-    public int PlayerHealth;
-    public int MaxHealth;
+    public int PlayerHealth = 3;
+    public int MaxHealth = 3;
     void Start() {
     }
 
