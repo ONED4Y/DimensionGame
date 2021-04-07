@@ -23,7 +23,7 @@ public class Mob1: MobFeatures {
     public float SlowSpeed = 2F;
     public bool IsMelee = true;
     public float PlayerIsInRange = 1.5F;
-    public IEnumerator GoToPlayer(Transform TF) {
+    public IEnumerator GoToPlayer(Transform TF, LayerMask CollisionLayer) {
         int RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
         float LifeTime = Time.time;
         Vector3 Destination = WalkDir(TF.position, Mathf.RoundToInt(Random.Range(1, 5)));
@@ -43,6 +43,11 @@ public class Mob1: MobFeatures {
                     ShouldWalk = new WaitForSecondsRealtime(3F);
                     //RandomWalkDir = Mathf.RoundToInt(Random.Range(1, 5));
                     Destination = WalkDir(TF.position, Mathf.RoundToInt(Random.Range(1, 5)));
+                    while(Physics2D.OverlapCircle(Destination, .2F, CollisionLayer)) {
+                    //while(Physics.Raycast(TF.position, Destination, 20.0f, CollisionLayer)) {
+                        Destination = WalkDir(TF.position, Mathf.RoundToInt(Random.Range(1, 5)));
+                        Debug.Log("Mob1 is trying to run into a wall");
+                    }
                 } else {
                     ShouldWalk = new WaitForSecondsRealtime(0);
                 }
