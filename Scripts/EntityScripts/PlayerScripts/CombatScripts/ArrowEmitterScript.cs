@@ -12,6 +12,7 @@ public class ArrowEmitterScript: MonoBehaviour {
         
     }
 
+
     void Update() {
         if(Input.GetKeyDown(KeyCode.I)) {
             KeyTimeDown = Time.time;
@@ -51,4 +52,6 @@ public class ArrowEmitterScript: MonoBehaviour {
             }
         }
     }
+
+    
 }

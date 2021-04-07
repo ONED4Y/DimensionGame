@@ -1566,6 +1566,10 @@ PrefabInstance:
       propertyPath: SelectedTool
       value: Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 8741517040267716658, guid: d66b34b2d1313d84aaf2be671116c864, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8741517040267716661, guid: d66b34b2d1313d84aaf2be671116c864, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

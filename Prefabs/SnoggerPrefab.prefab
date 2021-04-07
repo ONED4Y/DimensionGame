@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678696d3cf5cf06419aab19c5801a677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JDamage: 0
+  JDamage: 1
   JHp: 0
   JSpeed: 2
   PlayerLayer:

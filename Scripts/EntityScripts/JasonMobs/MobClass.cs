@@ -19,14 +19,19 @@ public class Mob: MonoBehaviour {
             _ => Vector3.zero
         };
     }
+
+
     public void JAttackPlayer(string aAttackType, float aRange, int aDamage) {
         if(aAttackType == "A_Melee") { //Attack_Melee
             Collider2D[] Jplayer = Physics2D.OverlapCircleAll(transform.position, aRange, PlayerLayer);
             foreach(Collider2D APlayer in Jplayer) {
-                //HealthScript JHealthScript = APlayer.GetComponent<HealthScript>;
-                //JhealthScript.GetDamage(aDamage);
+                PlayerHealthScript JHealthScript = APlayer.GetComponent<PlayerHealthScript>();
+                JHealthScript.GetDamage(aDamage);
                 Debug.Log(APlayer + "gets damage!");
+                //Debug.Log(JHealthScript.PlayerHealth);
             }
         }
     }
+
+    
 }

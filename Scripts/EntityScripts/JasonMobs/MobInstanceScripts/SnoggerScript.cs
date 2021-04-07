@@ -19,14 +19,20 @@ public class SnoggerScript: Mob {
         //Debug.Log("Wuuuaaaah!! Ich LEBE!!");
         JpositionPoint.parent = null;
     }
+
+
     IEnumerator WaitForMovement(float Jsec) {
         yield return new WaitForSeconds(Jsec);
         JIsMoving = false;
     }
+
+
     IEnumerator WaitForAttack(float Jsec) {
         yield return new WaitForSeconds(Jsec);
         JIsAttacking = false;
     }
+
+
     void Update() {
         Transform JplayerTransf = GameObject.Find("Player").transform;
         if(Vector3.Distance(transform.position, JplayerTransf.position) < JDetectPlayerRange && Vector3.Distance(transform.position, JplayerTransf.position) > JAtPlayerRange) {
@@ -50,4 +56,6 @@ public class SnoggerScript: Mob {
             transform.position = Vector3.MoveTowards(transform.position, JpositionPoint.position, JSpeed * Time.deltaTime);
         }
     }
+
+    
 }

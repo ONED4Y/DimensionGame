@@ -16,6 +16,7 @@ public class PlayerHealthScript: MonoBehaviour {
     public void GetDamage(int aDamage) {
         PlayerHealth -= aDamage;
         checkedHealth();
+        Debug.Log(PlayerHealth);
     }
 
 
@@ -37,6 +38,7 @@ public class PlayerHealthScript: MonoBehaviour {
 
 
     void PlayerDie() {
+        //scene switch to death screen
     }
 
     void AddHealth(int AddNum) {
@@ -45,5 +47,7 @@ public class PlayerHealthScript: MonoBehaviour {
         //macht weniger Schaden und langsamer wenn er lange nicht schläft 
         PlayerHealth += AddNum;
     }
+
+    
 }
 
