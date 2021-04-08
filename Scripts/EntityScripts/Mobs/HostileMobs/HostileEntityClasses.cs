@@ -19,8 +19,8 @@ public class Mob1: MobFeatures {
     public int Damage = 10;
     public int HP = 50;
     public float Size = 1F;
-    public float FastSpeed = 5F;
-    public float SlowSpeed = 2F;
+    public float FastSpeed = 2F;
+    public float SlowSpeed = 1F;
     public bool IsMelee = true;
     public float PlayerIsInRange = 1.5F;
     public IEnumerator GoToPlayer(Transform TF, LayerMask CollisionLayer) {
