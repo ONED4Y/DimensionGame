@@ -5,7 +5,7 @@ using UnityEngine;
 public class main: MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
-        Debug.Log("Keike 1Tag ist dumm!");
+        Debug.Log("Keike neindaughter ist dumm!");
         Debug.Log("ONED4Y");
     }
 
