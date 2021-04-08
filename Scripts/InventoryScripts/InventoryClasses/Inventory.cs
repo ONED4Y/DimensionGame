@@ -9,7 +9,7 @@ public class Inventory {
             Slots[i] = new Slot();
         }
     }
-    public void Clear() {
+    public void ClearInventory() {
         Slots = new Slot[9];
         for(int i = 0; i < 9; i++) {
             Slots[i] = new Slot();
