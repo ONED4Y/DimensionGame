@@ -14,10 +14,10 @@ public class ArrowEmitterScript: MonoBehaviour {
 
 
     void Update() {
-        if(Input.GetKeyDown(KeyCode.I)) {
+        if(Input.GetKeyDown(KeyCode.U)) {
             KeyTimeDown = Time.time;
         }
-        if(Input.GetKeyUp(KeyCode.I) && MPCS.SelectedTool == "Bow") {
+        if(Input.GetKeyUp(KeyCode.U) && MPCS.SelectedTool == "Bow") {
             LoadedTime = Time.time - KeyTimeDown;
             if(LoadedTime > 0.2F) {
                 GameObject Arrow = Instantiate(arrow, transform.position, transform.rotation);
